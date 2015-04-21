@@ -4,5 +4,5 @@ def volid(pwd):
     c = any(map(str.isdigit, pwd))
     d = not all(map(str.isalnum, pwd))
     return all([a,b,c,d])
-
-#判断密码是否是全部是数和或字母组成，且大小写都有
+    
+#楠岃瘉瀵嗙爜鏄惁绗﹀悎鏉′欢锛堝彧鐢卞瓧姣嶅拰鏁板瓧缁勬垚锛屼笖澶у皬鍐欏瓧姣嶉兘鏈夛級
