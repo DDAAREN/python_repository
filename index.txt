@@ -1,0 +1,6 @@
+#!coding:utf8
+
+1: DieDai.py	#演示各种迭代访法（按key，按value等）
+2: mail.py	#演示发邮件访法
+3: stdout.py	#演示修改print输出指向 
+4: mima.py	#一个判断密码是否符合要求的案例
