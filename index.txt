@@ -1,6 +1,6 @@
-#!coding:utf8
 
-1: DieDai.py		#演示迭代访法（按key迭代，按value迭代）
-2: mail.py			#演示python发邮件方法（用smtplib包）
-3: stdout.py		#演示修改print标准输出指向访法
-4: mima.py		#一个验证密码是否符合安全规则案例
+1: DieDai.py        #演示迭代访法（按key迭代，按value迭代）
+2: mail.py	        #演示python发邮件方法（用smtplib包）
+3: stdout.py        #演示修改print标准输出指向访法
+4: mima.py      #一个验证密码是否符合安全规则案例
+5: LCS.py       #最长字串匹配算法
