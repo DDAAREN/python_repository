@@ -35,21 +35,24 @@ def client(ip, port, message):
 if __name__ == '__main__':
     HOST, PORT = "localhost", 0
     server = ThreadedTCPServer((HOST, PORT), ThreadedTCPRequestHandler)
+    #server = SocketServer.TCPServer((HOST, PORT), ThreadedTCPRequestHandler)
     ip, port = server.server_address
 
     server_thread = threading.Thread(target=server.serve_forever)
     server_thread.daemon = True
     server_thread.start()
-    # 这个例子中，用线程的唯一作用是吧server线程放后台，
+    # 这个例子中，用threading.Thread的唯一作用是吧server线程放后台，
     # 然后可以进行其他操作，比如client请求
-    # 所谓的“异步”
+    # SocketServer.ThreadingMixIn的作用在于
+    # 针对每个request的处理使用不同于主线程的其他线程
 
     print "Server loop running in thread:", server_thread.name
 
     client(ip, port, "Hello World 1")
     client(ip, port, "Hello World 2")
     client(ip, port, "Hello World 3")
-    # server端处理线程还是只有一个，并没有多线程同时处理
-    # 所以依然会按顺序依次处理client请求
+    # 因为client()是按顺序调用
+    # 此例子中并没有体现多线程并发的场景
+    # 依然会按顺序依次创建子线程处理client请求
 
     server.shutdown()
